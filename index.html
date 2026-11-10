@@ -891,14 +891,14 @@
        4. Coupons Modal Data & Illustrative Card Rendering
     ------------------------------------------------------------- */
     const couponData = {
-  takashimaya: {
-    title: "高島屋 TAKASHIMAYA",
-    badge: "5% OFF 購物優惠 + ¥500券",
-    desc: "出示護照即可領取 TAKASHIMAYA SHOPPER'S CARD，滿 3,000 日圓享 5% 折扣！另附台灣旅客限定 PLAZA RESTAURANTS ¥500 優惠券。",
-    bgColor: "#F2A497",
-    image: "https://raw.githubusercontent.com/hihihi850112/nagoya-family-trip/main/coupons/Takashimaya.png"
-  },
-};
+      takashimaya: {
+        title: "高島屋 TAKASHIMAYA",
+        badge: "5% OFF 購物優惠 + ¥500券",
+        desc: "出示護照即可領取 TAKASHIMAYA SHOPPER'S CARD，滿 3,000 日圓享 5% 折扣！另附台灣旅客限定 PLAZA RESTAURANTS ¥500 優惠券。",
+        bgColor: "#F2A497",
+        code: "TAKASHIMAYA-5OFF-NAGOYA",
+        barcode: "||| ||||||| |||| ||| |||||"
+      },
       parco: {
         title: "松坂屋 / PARCO パルコ",
         badge: "9.5折優惠券 + 500日圓美食券",
@@ -982,56 +982,60 @@
     };
 
     function openCouponModal(key) {
-  const data = couponData[key];
-  if (!data) return;
+      const data = couponData[key];
+      if (!data) return;
 
-  const modalContent = document.getElementById('modal-content');
-
-  modalContent.innerHTML = `
-    <div class="text-center space-y-4">
-      <div class="inline-block bg-yamabuki px-3 py-1 rounded-full text-xs font-black border border-ink">
-        ${data.badge}
-      </div>
-
-      <h3 class="text-xl sm:text-2xl font-black text-ink">
-        ${data.title}
-      </h3>
-
-      <div class="bg-paper chunky-border rounded-2xl p-4 relative overflow-hidden shadow-cute"
-           style="background-color: ${data.bgColor}20;">
-
-        <div class="border-2 border-dashed border-ink p-3 rounded-xl bg-paper">
-
-          <img
-            src="${data.image}"
-            alt="${data.title} 優惠券"
-            class="w-full h-auto rounded-lg"
-            style="max-height: 500px; object-fit: contain;"
-          />
-
-          <div class="text-[11px] font-bold text-ink/80 text-left mt-3">
-            ${data.desc}
+      const modalContent = document.getElementById('modal-content');
+      modalContent.innerHTML = `
+        <div class="text-center space-y-4">
+          <div class="inline-block bg-yamabuki px-3 py-1 rounded-full text-xs font-black border border-ink">
+            ${data.badge}
           </div>
+          <h3 class="text-xl sm:text-2xl font-black text-ink">${data.title}</h3>
 
+          <!-- Simulated PDF Coupon Ticket Graphic -->
+          <div class="bg-paper chunky-border rounded-2xl p-4 relative overflow-hidden shadow-cute" style="background-color: ${data.bgColor}20;">
+            <div class="border-2 border-dashed border-ink p-3 rounded-xl bg-paper">
+              <div class="text-xs font-black text-ink/60 uppercase tracking-widest mb-1">JAPAN TRAVEL TAX FREE COUPON</div>
+              <div class="text-lg font-black text-ink mb-2">${data.title}</div>
+              
+              <!-- Barcode Graphic Box -->
+              <div class="bg-white p-3 rounded-lg border border-ink/40 my-2">
+                <div class="font-mono text-xl sm:text-2xl font-black tracking-widest text-ink select-all overflow-x-auto py-1">
+                  ${data.barcode}
+                </div>
+                <div class="font-mono text-xs font-bold text-ink/70">
+                  CODE: ${data.code}
+                </div>
+              </div>
+
+              <div class="text-[11px] font-bold text-ink/80 text-left mt-2">
+                ${data.desc}
+              </div>
+            </div>
+          </div>
+          
+          <div class="text-[11px] font-bold text-ink/50">
+            註：結帳前請向店員出示此優惠畫面以進行折扣核對。
+          </div>
         </div>
-      </div>
+      `;
 
-      <div class="text-[11px] font-bold text-ink/50">
-        註：結帳前請向店員出示此優惠畫面以進行折扣核對。
-      </div>
-    </div>
-  `;
-function closeCouponModal() {
-  document.getElementById('coupon-modal').classList.add('hidden');
-}
+      document.getElementById('coupon-modal').classList.remove('hidden');
+    }
 
-document.getElementById('coupon-modal').addEventListener('click', function(e) {
-  if (e.target === this) {
-     closeCouponModal();
-  }
-});
+    function closeCouponModal() {
+      document.getElementById('coupon-modal').classList.add('hidden');
+    }
+
+    document.getElementById('coupon-modal').addEventListener('click', function(e) {
+      if (e.target === this) {
+        closeCouponModal();
+      }
+    });
   </script>
 </body>
 </html>
+```
 
-
+您可以在右側編輯器預覽中直接操作與切換，所有點選與功能皆已同步更新完成！
