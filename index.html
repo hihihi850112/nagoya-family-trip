@@ -1,40 +1,1040 @@
-
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="zh-TW">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>名古屋家庭旅遊</title>
+  <title>2026 名古屋親子自由行 6 Day 5 Night</title>
+  
+  <!-- Google Fonts: Huninn / MPLUS Rounded 1c / Zen Maru Gothic -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700;800;900&family=Zen+Maru+Gothic:wght@400;500;700;900&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            paper: '#FFFCF6',
+            ink: '#3E3A39',
+            coral: '#F2A497',
+            yamabuki: '#F6D27A',
+            mizu: '#A8D3E6',
+            wakatake: '#B9DAA5',
+            cream: '#FFF8EA',
+          },
+          fontFamily: {
+            sans: ['"Zen Maru Gothic"', '"M PLUS Rounded 1c"', 'sans-serif'],
+          },
+          boxShadow: {
+            'cute': '4px 4px 0px #3E3A39',
+            'cute-lg': '6px 6px 0px #3E3A39',
+            'cute-sm': '2px 2px 0px #3E3A39',
+            'cute-inner': 'inset 2px 2px 0px rgba(62,58,57,0.1)',
+          }
+        }
+      }
+    }
+  </script>
+
   <style>
+    /* Custom Stylings & Picture Book Aesthetic */
     body {
-      font-family: Arial, sans-serif;
-      background: #fff8ef;
-      color: #55483d;
-      text-align: center;
-      padding: 40px 20px;
+      background-color: #FFFCF6;
+      color: #3E3A39;
+      font-family: 'Zen Maru Gothic', sans-serif;
+      background-image: radial-gradient(#3E3A39 0.75px, transparent 0.75px);
+      background-size: 16px 16px;
     }
-    h1 {
-      color: #b87545;
+
+    /* Chunky hand-drawn borders */
+    .chunky-border {
+      border: 3px solid #3E3A39;
     }
-    .card {
-      background: white;
-      padding: 25px;
-      border-radius: 15px;
-      max-width: 500px;
-      margin: 30px auto;
-      box-shadow: 0 3px 12px #ddd;
+    
+    .chunky-border-b {
+      border-bottom: 3px solid #3E3A39;
+    }
+
+    /* Keyframe Animations for SVGs */
+    @keyframes float-slow {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-8px) rotate(1deg); }
+    }
+    @keyframes bob-head {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-4px); }
+    }
+    @keyframes cloud-move {
+      0%, 100% { transform: translateX(0px); }
+      50% { transform: translateX(12px); }
+    }
+    @keyframes bounce-tab {
+      0% { transform: scale(0.95); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+
+    .animate-float {
+      animation: float-slow 4s ease-in-out infinite;
+    }
+    .animate-bob {
+      animation: bob-head 2.5s ease-in-out infinite;
+    }
+    .animate-cloud {
+      animation: cloud-move 6s ease-in-out infinite;
+    }
+    .tab-bounce {
+      animation: bounce-tab 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    /* Respect reduced motion settings */
+    @media (prefers-reduced-motion: reduce) {
+      .animate-float, .animate-bob, .animate-cloud, .tab-bounce {
+        animation: none !important;
+      }
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 10px;
+      height: 10px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #FFFCF6;
+      border-left: 2px solid #3E3A39;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #F6D27A;
+      border: 2px solid #3E3A39;
+      border-radius: 999px;
     }
   </style>
 </head>
-<body>
+<body class="min-h-screen pb-16 antialiased selection:bg-yamabuki selection:text-ink">
 
-  <h1>✈️ 名古屋家庭旅遊</h1>
+  <!-- Sticky Header / Nav -->
+  <header class="sticky top-0 z-40 bg-paper chunky-border-b px-3 py-2 sm:px-6 sm:py-3">
+    <div class="max-w-5xl mx-auto flex flex-wrap items-center justify-between gap-2">
+      <a href="#hero" class="flex items-center gap-2 font-black text-lg sm:text-xl text-ink hover:opacity-80 transition">
+        <svg class="w-7 h-7 animate-bob" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 48L32 12L52 48H12Z" fill="#F2A497" stroke="#3E3A39" stroke-width="4" stroke-linejoin="round"/>
+          <path d="M22 48V28H42V48" fill="#F6D27A" stroke="#3E3A39" stroke-width="4" stroke-linejoin="round"/>
+          <circle cx="32" cy="22" r="4" fill="#3E3A39"/>
+        </svg>
+        <span>名古屋 2026</span>
+      </a>
 
-  <div class="card">
-    <h2>歡迎來到我們的旅遊網站！</h2>
-    <p>一起探索名古屋的美食、景點與購物優惠。</p>
-    <p>🎟️ 店家優惠券即將登場！</p>
+      <!-- Quick Nav Links -->
+      <nav class="flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm font-bold overflow-x-auto pb-1 sm:pb-0">
+        <a href="#flights" class="px-2.5 py-1 rounded-xl bg-mizu/40 hover:bg-mizu chunky-border transition">航班</a>
+        <a href="#airport-transit" class="px-2.5 py-1 rounded-xl bg-coral/40 hover:bg-coral chunky-border transition">機場交通</a>
+        <a href="#itinerary" class="px-2.5 py-1 rounded-xl bg-yamabuki/40 hover:bg-yamabuki chunky-border transition">行程</a>
+        <a href="#hotel" class="px-2.5 py-1 rounded-xl bg-wakatake/40 hover:bg-wakatake chunky-border transition">住宿</a>
+        <a href="#todo" class="px-2.5 py-1 rounded-xl bg-coral/40 hover:bg-coral chunky-border transition">待辦</a>
+        <a href="#coupons" class="px-2.5 py-1 rounded-xl bg-yamabuki hover:bg-yamabuki chunky-border shadow-cute-sm transition">折價券</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="hero" class="max-w-5xl mx-auto px-4 pt-6 sm:pt-10 pb-8 text-center">
+    <div class="relative bg-cream chunky-border rounded-3xl p-6 sm:p-10 shadow-cute-lg overflow-hidden">
+      <!-- Decorative background SVGs -->
+      <div class="absolute top-4 left-6 animate-cloud opacity-80">
+        <svg width="60" height="30" viewBox="0 0 60 30" fill="none">
+          <path d="M10 25 C5 25 2 20 5 15 C2 10 8 5 15 8 C20 2 32 3 35 10 C42 5 52 10 50 18 C55 22 50 25 45 25 Z" fill="#ffffff" stroke="#3E3A39" stroke-width="3"/>
+        </svg>
+      </div>
+      <div class="absolute top-8 right-8 animate-cloud opacity-80" style="animation-delay: -3s;">
+        <svg width="70" height="35" viewBox="0 0 70 35" fill="none">
+          <path d="M10 30 C5 30 2 22 7 17 C4 11 12 5 20 9 C27 2 40 4 45 12 C54 7 65 13 62 22 C68 27 60 30 55 30 Z" fill="#ffffff" stroke="#3E3A39" stroke-width="3"/>
+        </svg>
+      </div>
+
+      <!-- Main Castle Illustration -->
+      <div class="relative z-10 my-2 flex justify-center">
+        <svg class="w-48 h-40 sm:w-64 sm:h-52 animate-float" viewBox="0 0 200 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="150" cy="35" r="22" fill="#F2A497" stroke="#3E3A39" stroke-width="3"/>
+          <path d="M40 140 L50 90 L150 90 L160 140 Z" fill="#E2E8F0" stroke="#3E3A39" stroke-width="3.5" stroke-linejoin="round"/>
+          <path d="M30 140 H170 V152 H30 Z" fill="#B9DAA5" stroke="#3E3A39" stroke-width="3.5" stroke-linejoin="round"/>
+          <path d="M35 95 C60 92 140 92 165 95 L150 75 H50 Z" fill="#A8D3E6" stroke="#3E3A39" stroke-width="3.5" stroke-linejoin="round"/>
+          <rect x="62" y="55" width="76" height="20" fill="#FFF8EA" stroke="#3E3A39" stroke-width="3.5"/>
+          <path d="M52 60 C75 56 125 56 148 60 L138 42 H62 Z" fill="#A8D3E6" stroke="#3E3A39" stroke-width="3.5" stroke-linejoin="round"/>
+          <rect x="74" y="28" width="52" height="15" fill="#FFF8EA" stroke="#3E3A39" stroke-width="3.5"/>
+          <path d="M64 32 C85 27 115 27 136 32 L125 15 H75 Z" fill="#A8D3E6" stroke="#3E3A39" stroke-width="3.5" stroke-linejoin="round"/>
+          <path d="M72 15 C70 8 75 5 76 2 C79 7 76 12 76 15 Z" fill="#F6D27A" stroke="#3E3A39" stroke-width="2"/>
+          <path d="M128 15 C130 8 125 5 124 2 C121 7 124 12 124 15 Z" fill="#F6D27A" stroke="#3E3A39" stroke-width="2"/>
+          <rect x="92" y="115" width="16" height="25" rx="3" fill="#3E3A39"/>
+          <circle cx="85" cy="70" r="3" fill="#3E3A39"/>
+          <circle cx="115" cy="70" r="3" fill="#3E3A39"/>
+          <circle cx="100" cy="40" r="3" fill="#3E3A39"/>
+          <circle cx="93" cy="102" r="2.5" fill="#3E3A39"/>
+          <circle cx="107" cy="102" r="2.5" fill="#3E3A39"/>
+          <path d="M98 105 Q100 108 102 105" stroke="#3E3A39" stroke-width="2" stroke-linecap="round"/>
+          <ellipse cx="90" cy="105" rx="3" ry="2" fill="#F2A497"/>
+          <ellipse cx="110" cy="105" rx="3" ry="2" fill="#F2A497"/>
+        </svg>
+      </div>
+
+      <div class="inline-block px-4 py-1.5 bg-yamabuki rounded-full chunky-border shadow-cute-sm font-bold text-xs sm:text-sm mb-3">
+        🍁 2026/11/29 (日) — 12/04 (五)
+      </div>
+      
+      <h1 class="text-2xl sm:text-4xl font-black text-ink mb-2 tracking-wide">
+        2026 名古屋親子自由行 6 Day
+      </h1>
+      <p class="text-sm sm:text-base font-bold text-ink/80 mb-6">
+        帶寶寶看水族館、吃鰻魚飯、熱血購物之旅！
+      </p>
+
+      <!-- Countdown Box -->
+      <div class="bg-paper chunky-border rounded-2xl p-4 max-w-md mx-auto shadow-cute">
+        <div class="text-xs font-bold text-ink/70 mb-2">距離出發時間 (2026/11/29 10:40) 還有</div>
+        <div id="countdown" class="grid grid-cols-4 gap-2 font-black text-ink">
+          <div class="bg-mizu/30 p-2 rounded-xl chunky-border">
+            <span id="cd-days" class="text-xl sm:text-2xl block">00</span>
+            <span class="text-[10px] font-bold text-ink/70">天</span>
+          </div>
+          <div class="bg-coral/30 p-2 rounded-xl chunky-border">
+            <span id="cd-hours" class="text-xl sm:text-2xl block">00</span>
+            <span class="text-[10px] font-bold text-ink/70">時</span>
+          </div>
+          <div class="bg-yamabuki/30 p-2 rounded-xl chunky-border">
+            <span id="cd-mins" class="text-xl sm:text-2xl block">00</span>
+            <span class="text-[10px] font-bold text-ink/70">分</span>
+          </div>
+          <div class="bg-wakatake/30 p-2 rounded-xl chunky-border">
+            <span id="cd-secs" class="text-xl sm:text-2xl block">00</span>
+            <span class="text-[10px] font-bold text-ink/70">秒</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Airport Transit Section (機場交通指引) -->
+  <section id="airport-transit" class="max-w-5xl mx-auto px-4 py-6">
+    <div class="flex items-center gap-3 mb-6">
+      <div class="w-10 h-10 rounded-2xl bg-coral chunky-border flex items-center justify-center shadow-cute-sm">
+        <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" stroke="#3E3A39" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="6" width="18" height="12" rx="2"/>
+          <path d="M7 15h0.01"/><path d="M17 15h0.01"/>
+          <path d="M3 11h18"/>
+        </svg>
+      </div>
+      <div>
+        <h2 class="text-xl sm:text-2xl font-black text-ink">機場交通指引 (中部國際機場 ➔ 名古屋站)</h2>
+        <p class="text-xs font-bold text-ink/70">名鐵 μSKY 特急購票與親子無障礙電梯避階梯指南</p>
+      </div>
+    </div>
+
+    <div class="bg-paper chunky-border rounded-3xl p-5 sm:p-8 shadow-cute space-y-6">
+      
+      <!-- Summary Info Badges -->
+      <div class="grid sm:grid-cols-3 gap-3">
+        <div class="bg-yamabuki/30 p-3 rounded-2xl border border-ink flex items-center gap-3">
+          <span class="text-2xl">🚄</span>
+          <div>
+            <div class="text-[10px] font-bold text-ink/70">搭乘車種</div>
+            <div class="text-sm font-black text-ink">名鐵 μSKY 特急</div>
+          </div>
+        </div>
+        <div class="bg-coral/20 p-3 rounded-2xl border border-ink flex items-center gap-3">
+          <span class="text-2xl">💴</span>
+          <div>
+            <div class="text-[10px] font-bold text-ink/70">車票費用 (僅限現金)</div>
+            <div class="text-sm font-black text-ink">¥1,430 /人 (5位共 ¥7,150)</div>
+          </div>
+        </div>
+        <div class="bg-wakatake/30 p-3 rounded-2xl border border-ink flex items-center gap-3">
+          <span class="text-2xl">🛗</span>
+          <div>
+            <div class="text-[10px] font-bold text-ink/70">到達出站通道</div>
+            <div class="text-sm font-black text-coral">西剪票口 (全程電梯)</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step by Step Instructions -->
+      <div class="grid md:grid-cols-2 gap-6">
+        
+        <!-- Step 1: Airport to Ticket Machine -->
+        <div class="bg-cream chunky-border rounded-2xl p-5 space-y-3">
+          <div class="flex items-center gap-2">
+            <span class="w-7 h-7 rounded-full bg-mizu border-2 border-ink flex items-center justify-center font-black text-xs text-ink">1</span>
+            <h3 class="font-black text-base text-ink">機場出境與自動售票機購票</h3>
+          </div>
+          <ul class="text-xs font-bold text-ink/85 space-y-2 leading-relaxed list-disc list-inside">
+            <li><strong class="text-ink">出境通道：</strong>第1航廈入境大廳 (2F) 出境後<span class="text-coral">左轉</span>，走向上斜坡通道進入「交通廣場 (2.5F)」。</li>
+            <li><strong class="text-ink">售票處：</strong>看到名鐵售票處，左邊為自動售票機，右邊為人工窗口。</li>
+            <li><strong class="text-ink">售票機操作步驟：</strong>
+              <ol class="pl-4 pt-1 space-y-1 list-decimal text-ink/90">
+                <li>點選「特別車票 車票」</li>
+                <li>選擇中間：「片道きっぷ+特別車両券」(單程票+特別車票)</li>
+                <li>選擇人數：【5成人】</li>
+                <li>目的地選擇：【名鐵名古屋】</li>
+                <li>點選「選擇座席位置」：<span class="text-coral">優先選 2 號車或 6 號車 12D 座位</span>（專為嬰兒推車／輪椅旅客預留）</li>
+                <li>準備【現金】付款（取回小張過閘門、大張車上驗票）</li>
+              </ol>
+            </li>
+            <li><strong class="text-ink">月台搭乘：</strong>於 1 號月台候車，將大張特別車票放置於前方座位插槽以便查票。</li>
+          </ul>
+        </div>
+
+        <!-- Step 2: Elevator Accessible Route at Nagoya -->
+        <div class="bg-cream chunky-border rounded-2xl p-5 space-y-3">
+          <div class="flex items-center gap-2">
+            <span class="w-7 h-7 rounded-full bg-coral text-white border-2 border-ink flex items-center justify-center font-black text-xs">2</span>
+            <h3 class="font-black text-base text-ink">名鐵名古屋站「無障礙電梯」出站路線</h3>
+          </div>
+          <div class="bg-coral/10 p-3 rounded-xl border border-coral/40 text-xs font-bold text-coral">
+            ⚠️ 警語：切勿走「中央剪票口」！中央剪票口雖最近但無電梯，攜帶推車與大行李需搬階梯！
+          </div>
+          <ul class="text-xs font-bold text-ink/85 space-y-2 leading-relaxed">
+            <li class="flex items-start gap-1.5">
+              <span class="text-coral">❶</span>
+              <span>在電車上預先向車頭/車尾移動，下車後尋找指標朝<strong class="text-coral underline">「西剪票口 (西改札口)」</strong>前進。</span>
+            </li>
+            <li class="flex items-start gap-1.5">
+              <span class="text-coral">❷</span>
+              <span>從「西剪票口」刷票出站，出來即為名鐵百貨 B1。</span>
+            </li>
+            <li class="flex items-start gap-1.5">
+              <span class="text-coral">❸</span>
+              <span>搭乘剪票口旁邊的名鐵百貨專用電梯搭至 1F 地面層 (百貨即使休息，該電梯仍運作)。</span>
+            </li>
+            <li class="flex items-start gap-1.5">
+              <span class="text-coral">❹</span>
+              <span>出名鐵百貨後銜接 JR Nagoya 站「広小路口」，右轉沿通路直走直達「中央コンコース」與金時鐘。</span>
+            </li>
+            <li class="flex items-start gap-1.5">
+              <span class="text-coral">❺</span>
+              <span>飯店專用電梯位於金時鐘手扶梯正後方，搭乘直達 15F 辦理入住！</span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Daily Itinerary Section (每日行程) -->
+  <section id="itinerary" class="max-w-5xl mx-auto px-4 py-6">
+    <div class="flex items-center justify-between mb-6">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-2xl bg-yamabuki chunky-border flex items-center justify-center shadow-cute-sm">
+          <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="#3E3A39" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+            <line x1="16" y1="2" x2="16" y2="6"/>
+            <line x1="8" y1="2" x2="8" y2="6"/>
+            <line x1="3" y1="10" x2="21" y2="10"/>
+          </svg>
+        </div>
+        <h2 class="text-xl sm:text-2xl font-black text-ink">每日詳細行程</h2>
+      </div>
+    </div>
+
+    <!-- Date Switcher Tabs -->
+    <div class="grid grid-cols-3 sm:grid-cols-6 gap-2 mb-6" id="day-tabs">
+      <button onclick="switchDay(1)" id="tab-btn-1" class="day-tab active bg-yamabuki chunky-border rounded-2xl p-2.5 text-center shadow-cute transition transform hover:-translate-y-0.5">
+        <div class="text-[10px] font-extrabold uppercase tracking-wider text-ink/70">Day 1</div>
+        <div class="text-base font-black text-ink">11/29 (日)</div>
+      </button>
+      <button onclick="switchDay(2)" id="tab-btn-2" class="day-tab bg-paper chunky-border rounded-2xl p-2.5 text-center shadow-cute-sm transition transform hover:-translate-y-0.5">
+        <div class="text-[10px] font-extrabold uppercase tracking-wider text-ink/70">Day 2</div>
+        <div class="text-base font-black text-ink">11/30 (一)</div>
+      </button>
+      <button onclick="switchDay(3)" id="tab-btn-3" class="day-tab bg-paper chunky-border rounded-2xl p-2.5 text-center shadow-cute-sm transition transform hover:-translate-y-0.5">
+        <div class="text-[10px] font-extrabold uppercase tracking-wider text-ink/70">Day 3</div>
+        <div class="text-base font-black text-ink">12/01 (二)</div>
+      </button>
+      <button onclick="switchDay(4)" id="tab-btn-4" class="day-tab bg-paper chunky-border rounded-2xl p-2.5 text-center shadow-cute-sm transition transform hover:-translate-y-0.5">
+        <div class="text-[10px] font-extrabold uppercase tracking-wider text-ink/70">Day 4</div>
+        <div class="text-base font-black text-ink">12/02 (三)</div>
+      </button>
+      <button onclick="switchDay(5)" id="tab-btn-5" class="day-tab bg-paper chunky-border rounded-2xl p-2.5 text-center shadow-cute-sm transition transform hover:-translate-y-0.5">
+        <div class="text-[10px] font-extrabold uppercase tracking-wider text-ink/70">Day 5</div>
+        <div class="text-base font-black text-ink">12/03 (四)</div>
+      </button>
+      <button onclick="switchDay(6)" id="tab-btn-6" class="day-tab bg-paper chunky-border rounded-2xl p-2.5 text-center shadow-cute-sm transition transform hover:-translate-y-0.5">
+        <div class="text-[10px] font-extrabold uppercase tracking-wider text-ink/70">Day 6</div>
+        <div class="text-base font-black text-ink">12/04 (五)</div>
+      </button>
+    </div>
+
+    <!-- Timeline Panels Displayed dynamically -->
+    <div id="timeline-container" class="bg-cream chunky-border rounded-3xl p-4 sm:p-8 shadow-cute-lg">
+      <!-- Dynamic Content Injected by JS -->
+    </div>
+  </section>
+
+  <!-- Hotel Info Section (住宿資訊) -->
+  <section id="hotel" class="max-w-5xl mx-auto px-4 py-6">
+    <div class="flex items-center gap-3 mb-6">
+      <div class="w-10 h-10 rounded-2xl bg-wakatake chunky-border flex items-center justify-center shadow-cute-sm">
+        <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="#3E3A39" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M18 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2Z"/>
+          <path d="M9 22v-4h6v4"/>
+          <path d="M8 6h.01"/><path d="M16 6h.01"/><path d="M12 6h.01"/>
+          <path d="M12 10h.01"/><path d="M12 14h.01"/>
+          <path d="M16 10h.01"/><path d="M16 14h.01"/>
+          <path d="M8 10h.01"/><path d="M8 14h.01"/>
+        </svg>
+      </div>
+      <h2 class="text-xl sm:text-2xl font-black text-ink">住宿資訊 (全程入住)</h2>
+    </div>
+
+    <div class="bg-paper chunky-border rounded-3xl p-5 sm:p-8 shadow-cute relative overflow-hidden">
+      <div class="flex flex-col md:flex-row gap-6 items-start">
+        
+        <!-- Cute Hotel Illustration -->
+        <div class="w-full md:w-1/3 flex justify-center bg-mizu/20 chunky-border rounded-2xl p-4">
+          <svg class="w-40 h-40 animate-bob" viewBox="0 0 160 160" fill="none">
+            <rect x="35" y="30" width="90" height="115" rx="6" fill="#FFF8EA" stroke="#3E3A39" stroke-width="3.5"/>
+            <rect x="55" y="12" width="50" height="20" rx="4" fill="#F6D27A" stroke="#3E3A39" stroke-width="3"/>
+            <text x="80" y="26" font-family="Zen Maru Gothic" font-weight="900" font-size="10" fill="#3E3A39" text-anchor="middle">GATE</text>
+            <rect x="48" y="42" width="16" height="14" rx="2" fill="#A8D3E6" stroke="#3E3A39" stroke-width="2"/>
+            <rect x="72" y="42" width="16" height="14" rx="2" fill="#A8D3E6" stroke="#3E3A39" stroke-width="2"/>
+            <rect x="96" y="42" width="16" height="14" rx="2" fill="#A8D3E6" stroke="#3E3A39" stroke-width="2"/>
+            <rect x="48" y="66" width="16" height="14" rx="2" fill="#F6D27A" stroke="#3E3A39" stroke-width="2"/>
+            <rect x="72" y="66" width="16" height="14" rx="2" fill="#A8D3E6" stroke="#3E3A39" stroke-width="2"/>
+            <rect x="96" y="66" width="16" height="14" rx="2" fill="#F6D27A" stroke="#3E3A39" stroke-width="2"/>
+            <rect x="48" y="90" width="16" height="14" rx="2" fill="#A8D3E6" stroke="#3E3A39" stroke-width="2"/>
+            <rect x="72" y="90" width="16" height="14" rx="2" fill="#F2A497" stroke="#3E3A39" stroke-width="2"/>
+            <rect x="96" y="90" width="16" height="14" rx="2" fill="#A8D3E6" stroke="#3E3A39" stroke-width="2"/>
+            <path d="M68 145 V118 H92 V145" fill="#3E3A39"/>
+            <circle cx="88" cy="132" r="1.5" fill="#FFF8EA"/>
+          </svg>
+        </div>
+
+        <!-- Details -->
+        <div class="w-full md:w-2/3 space-y-3 font-bold text-sm">
+          <div class="inline-block bg-wakatake/40 px-3 py-1 rounded-full text-xs border border-ink">
+            連住 5 晚 ‧ JR名古屋站直通
+          </div>
+          <h3 class="text-xl sm:text-2xl font-black text-ink">Nagoya JR Gate Tower Hotel (名古屋JR門塔酒店)</h3>
+          
+          <div class="space-y-2 text-ink/80 pt-2">
+            <p class="flex items-start gap-2">
+              <span class="text-coral">📍</span>
+              <span>地址：1 Chome-1-3 Meieki, Nakamura Ward, Nagoya, Aichi 450-6660</span>
+            </p>
+            <p class="flex items-center gap-2">
+              <span class="text-coral">📞</span>
+              <span>電話：+81 52-566-2111</span>
+            </p>
+            <p class="flex items-center gap-2">
+              <span class="text-coral">⏰</span>
+              <span>入住時間：15:00 PM | 退房時間：11:00 AM</span>
+            </p>
+          </div>
+
+          <!-- Special Notice Box -->
+          <div class="bg-coral/15 chunky-border rounded-2xl p-4 mt-4 space-y-2 text-xs">
+            <div class="font-black text-coral flex items-center gap-1 text-sm">
+              💡 攜帶嬰兒推車／大行李轉乘秘訣：
+            </div>
+            <p class="text-ink/90">
+              在名鐵名古屋站下車後，請務必朝<strong class="text-coral underline underline-offset-2">「西剪票口 (西改札口)」</strong>移動！該處出來可搭乘名鐵百貨電梯直達地面，接續 JR 広小路口與金時鐘，飯店電梯就在金時鐘手扶梯後方，<span class="font-extrabold text-ink">全無障礙不必搬推車行李！</span>
+            </p>
+          </div>
+
+          <!-- English Address for Check-in -->
+          <div class="bg-cream p-3 rounded-xl border border-ink/40 text-xs">
+            <span class="text-ink/60 block mb-0.5">入住填寫資料卡英文地址：</span>
+            <code class="font-mono bg-paper px-2 py-1 rounded border border-ink/30 text-ink block break-all select-all">
+              15 F., No. 81, Longshan E. Rd., East Dist., Hsinchu City 300047, Taiwan (R.O.C.)
+            </code>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Todo Checklist (待辦事項) -->
+  <section id="todo" class="max-w-5xl mx-auto px-4 py-6">
+    <div class="flex items-center justify-between mb-6">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-2xl bg-coral chunky-border flex items-center justify-center shadow-cute-sm">
+          <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="#3E3A39" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="m9 11 3 3L22 4"/>
+            <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
+          </svg>
+        </div>
+        <h2 class="text-xl sm:text-2xl font-black text-ink">出發前待辦事項清單</h2>
+      </div>
+      <span id="todo-progress" class="bg-coral text-white font-black text-xs px-3 py-1 rounded-full chunky-border">
+        0 / 14 完成
+      </span>
+    </div>
+
+    <div class="bg-paper chunky-border rounded-3xl p-5 sm:p-8 shadow-cute">
+      <div class="grid sm:grid-cols-2 gap-3" id="todo-list-container">
+        <!-- JS rendered checkboxes -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Coupons Drawer / Modal Section (優惠券專區) -->
+  <section id="coupons" class="max-w-5xl mx-auto px-4 py-6">
+    <div class="flex items-center gap-3 mb-6">
+      <div class="w-10 h-10 rounded-2xl bg-yamabuki chunky-border flex items-center justify-center shadow-cute-sm">
+        <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="#3E3A39" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v2z"/>
+          <path d="M13 5v14"/>
+        </svg>
+      </div>
+      <div>
+        <h2 class="text-xl sm:text-2xl font-black text-ink">優惠券專區</h2>
+        <p class="text-xs font-bold text-ink/70">點選店家名稱即可檢視對應圖片與優惠內容</p>
+      </div>
+    </div>
+
+    <!-- Category Groups -->
+    <div class="space-y-6">
+      <!-- Department Stores -->
+      <div class="bg-cream chunky-border rounded-2xl p-5 shadow-cute">
+        <h3 class="font-black text-base text-ink mb-3 flex items-center gap-2">
+          <span>🛍️</span> 百貨公司優惠
+        </h3>
+        <div class="flex flex-wrap gap-2.5">
+          <button onclick="openCouponModal('takashimaya')" class="bg-paper hover:bg-yamabuki/40 chunky-border px-4 py-2.5 rounded-xl font-bold text-sm shadow-cute-sm transition flex items-center gap-2">
+            <span>高島屋 TAKASHIMAYA</span>
+            <span class="text-xs bg-coral text-white px-2 py-0.5 rounded-md">5% OFF + ¥500券</span>
+          </button>
+          <button onclick="openCouponModal('parco')" class="bg-paper hover:bg-yamabuki/40 chunky-border px-4 py-2.5 rounded-xl font-bold text-sm shadow-cute-sm transition flex items-center gap-2">
+            <span>松坂屋 / PARCO パルコ</span>
+            <span class="text-xs bg-wakatake text-ink px-2 py-0.5 rounded-md">95折 + 500円券</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Electronics -->
+      <div class="bg-cream chunky-border rounded-2xl p-5 shadow-cute">
+        <h3 class="font-black text-base text-ink mb-3 flex items-center gap-2">
+          <span>📷</span> 大型複合量販與家電優惠
+        </h3>
+        <div class="flex flex-wrap gap-2.5">
+          <button onclick="openCouponModal('biccamera')" class="bg-paper hover:bg-yamabuki/40 chunky-border px-4 py-2.5 rounded-xl font-bold text-sm shadow-cute-sm transition flex items-center gap-2">
+            <span>BicCamera ビックカメラ</span>
+            <span class="text-xs bg-coral text-white px-2 py-0.5 rounded-md">10%免稅 + 最高7%</span>
+          </button>
+          <button onclick="openCouponModal('edion')" class="bg-paper hover:bg-yamabuki/40 chunky-border px-4 py-2.5 rounded-xl font-bold text-sm shadow-cute-sm transition flex items-center gap-2">
+            <span>EDION 愛電王 エディオン</span>
+            <span class="text-xs bg-coral text-white px-2 py-0.5 rounded-md">10%免稅 + 最高7%</span>
+          </button>
+          <button onclick="openCouponModal('donki')" class="bg-paper hover:bg-yamabuki/40 chunky-border px-4 py-2.5 rounded-xl font-bold text-sm shadow-cute-sm transition flex items-center gap-2">
+            <span>唐吉訶德 ドン・キホーテ</span>
+            <span class="text-xs bg-yamabuki text-ink px-2 py-0.5 rounded-md">免稅 + 5%折扣</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Drugstores -->
+      <div class="bg-cream chunky-border rounded-2xl p-5 shadow-cute">
+        <h3 class="font-black text-base text-ink mb-3 flex items-center gap-2">
+          <span>💊</span> 藥妝店優惠
+        </h3>
+        <div class="flex flex-wrap gap-2.5">
+          <button onclick="openCouponModal('matsukiyo')" class="bg-paper hover:bg-yamabuki/40 chunky-border px-4 py-2.5 rounded-xl font-bold text-sm shadow-cute-sm transition flex items-center gap-2">
+            <span>松本清 マツモトキヨシ</span>
+            <span class="text-xs bg-mizu text-ink px-2 py-0.5 rounded-md">最高 7% OFF</span>
+          </button>
+          <button onclick="openCouponModal('tsuruha')" class="bg-paper hover:bg-yamabuki/40 chunky-border px-4 py-2.5 rounded-xl font-bold text-sm shadow-cute-sm transition flex items-center gap-2">
+            <span>鶴羽藥妝 ツルハドラッグ</span>
+            <span class="text-xs bg-mizu text-ink px-2 py-0.5 rounded-md">最高 7% OFF</span>
+          </button>
+          <button onclick="openCouponModal('sundrug')" class="bg-paper hover:bg-yamabuki/40 chunky-border px-4 py-2.5 rounded-xl font-bold text-sm shadow-cute-sm transition flex items-center gap-2">
+            <span>尚都樂客 Sundrug サンドラッグ</span>
+            <span class="text-xs bg-mizu text-ink px-2 py-0.5 rounded-md">最高 7% OFF</span>
+          </button>
+          <button onclick="openCouponModal('daikoku')" class="bg-paper hover:bg-yamabuki/40 chunky-border px-4 py-2.5 rounded-xl font-bold text-sm shadow-cute-sm transition flex items-center gap-2">
+            <span>大國藥妝 ダイコク</span>
+            <span class="text-xs bg-mizu text-ink px-2 py-0.5 rounded-md">最高 8% OFF</span>
+          </button>
+          <button onclick="openCouponModal('sugi')" class="bg-paper hover:bg-yamabuki/40 chunky-border px-4 py-2.5 rounded-xl font-bold text-sm shadow-cute-sm transition flex items-center gap-2">
+            <span>SUGI 杉藥局 スギ薬局</span>
+            <span class="text-xs bg-mizu text-ink px-2 py-0.5 rounded-md">最高 8% OFF</span>
+          </button>
+          <button onclick="openCouponModal('cosmos')" class="bg-paper hover:bg-yamabuki/40 chunky-border px-4 py-2.5 rounded-xl font-bold text-sm shadow-cute-sm transition flex items-center gap-2">
+            <span>COSMOS 科摩思 コスモス</span>
+            <span class="text-xs bg-mizu text-ink px-2 py-0.5 rounded-md">最高 9% OFF</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Coupon Modal Drawer -->
+  <div id="coupon-modal" class="fixed inset-0 z-50 bg-ink/60 backdrop-blur-sm hidden flex items-center justify-center p-4">
+    <div class="bg-paper chunky-border rounded-3xl max-w-md w-full p-6 shadow-cute-lg relative animate-bounce-tab max-h-[90vh] overflow-y-auto">
+      <button onclick="closeCouponModal()" class="absolute top-4 right-4 w-9 h-9 bg-coral text-white font-black rounded-full chunky-border flex items-center justify-center hover:opacity-80 z-10">
+        ✕
+      </button>
+
+      <div id="modal-content">
+        <!-- Dynamically filled by JS -->
+      </div>
+    </div>
   </div>
 
+  <!-- Footer -->
+  <footer class="text-center py-8 text-xs font-bold text-ink/60 border-t-2 border-ink/20 mt-12">
+    2026 名古屋親子自由行 ‧ 祝旅途愉快 ✨
+  </footer>
+
+  <!-- Inline JavaScript Logic -->
+  <script>
+    /* -------------------------------------------------------------
+       1. Countdown Timer Logic
+    ------------------------------------------------------------- */
+    const targetDate = new Date('2026-11-29T10:40:00+08:00').getTime();
+
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const difference = targetDate - now;
+
+      if (difference <= 0) {
+        document.getElementById('countdown').innerHTML = `<div class="col-span-4 text-center text-coral font-black text-xl py-2">🎉 快樂出發中！</div>`;
+        return;
+      }
+
+      const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+      document.getElementById('cd-days').innerText = String(days).padStart(2, '0');
+      document.getElementById('cd-hours').innerText = String(hours).padStart(2, '0');
+      document.getElementById('cd-mins').innerText = String(minutes).padStart(2, '0');
+      document.getElementById('cd-secs').innerText = String(seconds).padStart(2, '0');
+    }
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+
+    /* -------------------------------------------------------------
+       2. Daily Itinerary Data & Switching Logic
+    ------------------------------------------------------------- */
+    const itineraryData = {
+      1: {
+        date: "2026/11/29 (日)",
+        title: "Day 1 啟程 ➔ 抵達名古屋",
+        svg: `<svg class="w-16 h-16 animate-bob" viewBox="0 0 64 64" fill="none"><path d="M10 40 L54 40 L44 54 H20 Z" fill="#A8D3E6" stroke="#3E3A39" stroke-width="3"/><path d="M16 28 L32 10 L48 28 Z" fill="#F6D27A" stroke="#3E3A39" stroke-width="3"/><circle cx="32" cy="42" r="5" fill="#F2A497" stroke="#3E3A39" stroke-width="2"/></svg>`,
+        events: [
+          { time: "10:40", text: "出發前往桃園國際機場 (預計11:55抵達第一航廈報到)", tag: "交通", tagColor: "bg-mizu" },
+          { time: "14:55", text: "起飛星宇航空 JX838 班機 ✈️ (預計飛行 2h 55m)", tag: "航班", tagColor: "bg-coral text-white" },
+          { time: "18:30", text: "抵達中部國際機場 (NGO) 第一航廈 ➔ 辦理入境提取行李", tag: "機場", tagColor: "bg-yamabuki" },
+          { time: "19:00", text: "【備選晚餐】麵家獅子丸 (機場店, T1 4F 55號) 濃厚白湯/龍蝦味噌拉麵", tag: "美食", tagColor: "bg-wakatake" },
+          { time: "19:30", text: "於交通廣場購買名鐵 µSKY 特急車票 (5成人票價約 ¥7,150, 現金支付)", tag: "交通", tagColor: "bg-mizu" },
+          { time: "20:10", text: "抵達名鐵名古屋站 ➔ 由「西剪票口」出站 (直通電梯至地面, 無障礙最佳)", tag: "重要提示", tagColor: "bg-coral text-white", mustGo: true },
+          { time: "20:30", text: "Check-in 入住 Nagoya JR Gate Tower Hotel (名古屋JR門塔酒店) 稍作整裝", tag: "住宿", tagColor: "bg-wakatake" },
+          { time: "20:40", text: "飯店 12-13F 美食街晚餐 / 超商補貨 / 飯店附近閒晃散步", tag: "宵夜", tagColor: "bg-yamabuki" }
+        ]
+      },
+      2: {
+        date: "2026/11/30 (一)",
+        title: "Day 2 榮商圈自由散步購物路線",
+        svg: `<svg class="w-16 h-16 animate-bob" viewBox="0 0 64 64" fill="none"><path d="M32 6 V58 M16 26 H48 M22 42 H42" stroke="#3E3A39" stroke-width="4" stroke-linecap="round"/><path d="M32 6 L20 20 H44 Z" fill="#F2A497" stroke="#3E3A39" stroke-width="3"/></svg>`,
+        customLayout: true,
+        morningEvents: [
+          { time: "08:00", text: "飯店享用美味早餐", tag: "日常", tagColor: "bg-paper" },
+          { time: "11:30", text: "【午餐】炭燒富士鰻魚飯 太閤口店 (必點鰻魚飯三吃、限量烤鰻魚肝)", tag: "美食", tagColor: "bg-coral text-white", mustGo: true, reserved: true }
+        ],
+        shoppingRoute: [
+          { name: "中部電力未來塔", note: "距離飯店徒步 10 分鐘，拍照打卡", tag: "打卡", tagColor: "bg-mizu" },
+          { name: "下午茶 HARBS", note: "須排隊 (官網已預約 11:30，可彈性調整)", tag: "甜點", tagColor: "bg-yamabuki", mustGo: true },
+          { name: "久屋大通公園", note: "戶外綠地放空、放電好去處", tag: "親子放電", tagColor: "bg-wakatake" },
+          { name: "唐吉訶德 榮本店", note: "大型複合賣場，補貨首選", tag: "購物", tagColor: "bg-coral text-white" },
+          { name: "LOFT 旗艦店", note: "文具、生活雜貨選物", tag: "購物", tagColor: "bg-wakatake" },
+          { name: "HAERA (2026全新開幕)", note: "最新潮流購物據點", tag: "踩點", tagColor: "bg-mizu" },
+          { name: "空中露臺 4F", note: "景觀視野極佳，可在此休息玩耍", tag: "休息景點", tagColor: "bg-yamabuki" },
+          { name: "名古屋三越", note: "經典百貨專櫃購物", tag: "百貨", tagColor: "bg-paper" },
+          { name: "松坂屋 名古屋店", note: "美食街蓬萊軒(10F)、明治屋食品雜貨(B1)、治一郎年輪蛋糕(B1)", tag: "美食購物", tagColor: "bg-wakatake" },
+          { name: "名古屋 PARCO", note: "東館 2F Pokemon Center、3F KIDDY LAND & SNOOPY & SUPER KID LAND，周邊還有弁才天水果大福、嘉木園甘香房抹茶", tag: "動漫/甜點", tagColor: "bg-coral text-white", mustGo: true },
+          { name: "三浦餐具店", note: "位於大須商店街內，精緻日本餐具專賣", tag: "特色小店", tagColor: "bg-mizu" }
+        ],
+        eveningEvents: [
+          { time: "19:00", text: "【晚餐】燒肉 飛驒牛一頭家 馬喰一代 名古屋WEST (已預約 6位)", tag: "美食", tagColor: "bg-coral text-white", mustGo: true, reserved: true },
+          { time: "20:30", text: "MaxValu 太閤店 / 成城石井 / 超商採買補貨", tag: "補貨", tagColor: "bg-yamabuki" }
+        ]
+      },
+      3: {
+        date: "2026/12/01 (二)",
+        title: "Day 3 東山動植物園賞楓 & 高島屋採買",
+        svg: `<svg class="w-16 h-16 animate-bob" viewBox="0 0 64 64" fill="none"><path d="M32 10 C20 10 12 24 18 38 C22 48 32 58 32 58 C32 58 42 48 46 38 C52 24 44 10 32 10 Z" fill="#F2A497" stroke="#3E3A39" stroke-width="3"/><path d="M32 18 V46 M24 28 L32 36 M40 26 L32 34" stroke="#3E3A39" stroke-width="2.5"/></svg>`,
+        events: [
+          { time: "07:30", text: "享用早餐準備出發", tag: "日常", tagColor: "bg-paper" },
+          { time: "09:00", text: "【東山動植物園】搭乘東山線至星ヶ丘駅 ➔ 欣賞絕美秋楓與可愛動物", tag: "景點", tagColor: "bg-wakatake", mustGo: true },
+          { time: "12:00", text: "返回飯店休息片刻", tag: "休息", tagColor: "bg-mizu" },
+          { time: "13:00", text: "名古屋車站 & JR高島屋逛街大採買 (11F UNIQLO/GU, 9-10F Bic Camera, B1 伴手禮)", tag: "購物", tagColor: "bg-yamabuki" },
+          { time: "17:00", text: "【晚餐】美登利壽司 (飯店 12F, 現場排隊)", tag: "美食", tagColor: "bg-coral text-white", mustGo: true },
+          { time: "19:00", text: "自由活動 / 超商與超市最後補貨", tag: "自由", tagColor: "bg-paper" }
+        ]
+      },
+      4: {
+        date: "2026/12/02 (三)",
+        title: "Day 4 名古屋港水族館親子大冒險",
+        svg: `<svg class="w-16 h-16 animate-bob" viewBox="0 0 64 64" fill="none"><path d="M10 38 C10 20 30 14 44 20 C54 25 58 36 50 44 C40 52 20 50 10 38 Z" fill="#A8D3E6" stroke="#3E3A39" stroke-width="3"/><path d="M50 44 L60 52 L54 38 Z" fill="#A8D3E6" stroke="#3E3A39" stroke-width="3"/><circle cx="24" cy="28" r="3" fill="#3E3A39"/></svg>`,
+        events: [
+          { time: "08:00", text: "享用早餐", tag: "日常", tagColor: "bg-paper" },
+          { time: "10:00", text: "【名古屋港水族館】搭 TAXI GO 直達 ➔ 北館3F觀賞海洋生物", tag: "景點", tagColor: "bg-mizu", mustGo: true },
+          { time: "11:00", text: "🐬 精彩海豚表演 (20分鐘) @ 北館3F表演場 (另有 13:00 場)", tag: "表演", tagColor: "bg-yamabuki" },
+          { time: "12:00", text: "🐋 逆戟鯨 (殺人鯨) 公開訓練 (15分鐘) @ 北館3F (另有 14:30 場)", tag: "表演", tagColor: "bg-coral text-white" },
+          { time: "13:00", text: "水族館美食街用餐或自帶點心休息 ➔ 後續返回飯店", tag: "午餐", tagColor: "bg-wakatake" },
+          { time: "17:00", text: "【晚餐】白河鰻魚飯 名駅店 (已預約 17:00 3位+3位)", tag: "美食", tagColor: "bg-coral text-white", reserved: true },
+          { time: "21:00", text: "居酒屋或飯店宵夜時間 🍻", tag: "宵夜", tagColor: "bg-yamabuki" }
+        ]
+      },
+      5: {
+        date: "2026/12/03 (四)",
+        title: "Day 5 文化探索 & 名古屋城補行程",
+        svg: `<svg class="w-16 h-16 animate-bob" viewBox="0 0 64 64" fill="none"><path d="M12 52 H52 V28 L32 12 L12 28 Z" fill="#F6D27A" stroke="#3E3A39" stroke-width="3"/><rect x="24" y="34" width="16" height="18" fill="#3E3A39"/></svg>`,
+        events: [
+          { time: "08:00", text: "享用早餐", tag: "日常", tagColor: "bg-paper" },
+          { time: "11:30", text: "【午餐】敘敘苑商業午餐 (或從美食清單挑選)", tag: "美食", tagColor: "bg-coral text-white" },
+          { time: "13:30", text: "名勝巡禮：【名古屋城】或【豐田產業技術紀念館】或榮商圈補貨", tag: "景點", tagColor: "bg-wakatake", mustGo: true },
+          { time: "17:00", text: "【晚餐】白河鰻魚飯 (已預定 17:00)", tag: "美食", tagColor: "bg-coral text-white", reserved: true },
+          { time: "18:30", text: "自由活動時間 / 打包行李整裝準備明天回國", tag: "自由", tagColor: "bg-yamabuki" }
+        ]
+      },
+      6: {
+        date: "2026/12/04 (五)",
+        title: "Day 6 機場最終巡禮 ➔ 滿載而歸",
+        svg: `<svg class="w-16 h-16 animate-bob" viewBox="0 0 64 64" fill="none"><path d="M8 32 C20 12 44 12 56 32 C44 52 20 52 8 32 Z" fill="#B9DAA5" stroke="#3E3A39" stroke-width="3"/><path d="M26 32 L36 22 L42 32 L36 42 Z" fill="#F6D27A" stroke="#3E3A39" stroke-width="2"/></svg>`,
+        events: [
+          { time: "08:00", text: "飯店寄送大件行李至機場或櫃檯辦理托運預備", tag: "行李", tagColor: "bg-mizu" },
+          { time: "11:00", text: "辦理退房 ➔ 寄存隨身行李於飯店櫃檯", tag: "退房", tagColor: "bg-yamabuki" },
+          { time: "11:30", text: "車站周邊享用午餐與最後巡禮大採買", tag: "午餐", tagColor: "bg-wakatake" },
+          { time: "14:00", text: "搭乘名鐵 μSKY 出發前往中部國際機場 (NGO)", tag: "交通", tagColor: "bg-mizu" },
+          { time: "15:00", text: "辦理出境手續 ➔ 3F 辦理退稅", tag: "機場", tagColor: "bg-coral text-white" },
+          { time: "16:00", text: "第一航廈4F看飛機 ➔ 第二航廈 Flight of Dreams 看波音 787 與免稅店大爆買", tag: "必去", tagColor: "bg-yamabuki", mustGo: true },
+          { time: "20:15", text: "起飛星宇航空 JX839 班機 ✈️ (預計飛行 3h 35m)", tag: "航班", tagColor: "bg-coral text-white" },
+          { time: "22:50", text: "平安抵達桃園國際機場 第一航廈 🏠", tag: "抵達", tagColor: "bg-wakatake" }
+        ]
+      }
+    };
+
+    function switchDay(dayNum) {
+      document.querySelectorAll('.day-tab').forEach(tab => {
+        tab.classList.remove('bg-yamabuki', 'shadow-cute');
+        tab.classList.add('bg-paper', 'shadow-cute-sm');
+      });
+      const activeTab = document.getElementById(`tab-btn-${dayNum}`);
+      activeTab.classList.remove('bg-paper', 'shadow-cute-sm');
+      activeTab.classList.add('bg-yamabuki', 'shadow-cute', 'tab-bounce');
+
+      setTimeout(() => activeTab.classList.remove('tab-bounce'), 300);
+
+      const data = itineraryData[dayNum];
+      const container = document.getElementById('timeline-container');
+
+      let html = `
+        <div class="flex items-center justify-between border-b-3 border-ink pb-4 mb-6">
+          <div>
+            <span class="text-xs font-black text-coral uppercase tracking-wider block">DAY ${dayNum}</span>
+            <h3 class="text-xl sm:text-2xl font-black text-ink">${data.title}</h3>
+          </div>
+          <div>${data.svg}</div>
+        </div>
+      `;
+
+      if (data.customLayout) {
+        // Special render for Day 2 custom route without fixed timestamps in afternoon
+        html += `<div class="relative pl-4 sm:pl-6 border-l-3 border-ink/40 space-y-6">`;
+        
+        // Morning
+        data.morningEvents.forEach(item => {
+          html += renderTimelineCard(item);
+        });
+
+        // Shopping Route Box (13:00 - 19:00)
+        html += `
+          <div class="relative group">
+            <div class="absolute -left-[25px] sm:-left-[33px] top-1 w-4 h-4 rounded-full bg-coral border-2 border-ink"></div>
+            <div class="bg-cream chunky-border rounded-2xl p-4 sm:p-5 shadow-cute">
+              <div class="flex items-center gap-2 mb-3">
+                <span class="font-black text-sm text-white bg-coral px-3 py-1 rounded-lg border border-ink">13:00 ➔ 19:00</span>
+                <span class="text-xs font-black bg-yamabuki text-ink px-2.5 py-0.5 rounded-full border border-ink">榮商圈 自由散步購物路線</span>
+              </div>
+              <p class="text-xs font-bold text-ink/70 mb-4">按以下順序行走散步與購物，無固定時間限制：</p>
+              
+              <div class="space-y-2.5">
+        `;
+
+        data.shoppingRoute.forEach((step, idx) => {
+          html += `
+            <div class="flex items-start gap-2.5 bg-paper p-3 rounded-xl border border-ink/30">
+              <span class="w-5 h-5 rounded-full bg-yamabuki border border-ink flex items-center justify-center font-black text-[11px] shrink-0 mt-0.5">
+                ${idx + 1}
+              </span>
+              <div class="grow">
+                <div class="flex items-center gap-2 flex-wrap">
+                  <span class="font-black text-sm text-ink">${step.name}</span>
+                  <span class="text-[10px] font-black px-2 py-0.5 rounded-md border border-ink ${step.tagColor}">${step.tag}</span>
+                  ${step.mustGo ? `<span class="text-[10px] font-black bg-coral text-white px-1.5 py-0.5 rounded border border-ink">★ 必去</span>` : ''}
+                </div>
+                <p class="text-xs font-bold text-ink/70 mt-0.5">${step.note}</p>
+              </div>
+            </div>
+          `;
+        });
+
+        html += `
+              </div>
+            </div>
+          </div>
+        `;
+
+        // Evening
+        data.eveningEvents.forEach(item => {
+          html += renderTimelineCard(item);
+        });
+
+        html += `</div>`;
+      } else {
+        // Standard timeline
+        html += `<div class="relative pl-4 sm:pl-6 border-l-3 border-ink/40 space-y-6">`;
+        data.events.forEach(item => {
+          html += renderTimelineCard(item);
+        });
+        html += `</div>`;
+      }
+
+      container.innerHTML = html;
+    }
+
+    function renderTimelineCard(item) {
+      return `
+        <div class="relative group">
+          <div class="absolute -left-[25px] sm:-left-[33px] top-1 w-4 h-4 rounded-full bg-yamabuki border-2 border-ink group-hover:scale-125 transition"></div>
+          <div class="bg-paper chunky-border rounded-2xl p-4 shadow-cute-sm hover:shadow-cute transition">
+            <div class="flex flex-wrap items-center gap-2 mb-1.5">
+              <span class="font-black text-sm sm:text-base text-ink bg-cream px-2 py-0.5 rounded-lg border border-ink/40">
+                ${item.time}
+              </span>
+              <span class="text-xs font-extrabold px-2.5 py-0.5 rounded-full border border-ink ${item.tagColor}">
+                ${item.tag}
+              </span>
+              ${item.mustGo ? `<span class="text-xs font-black bg-coral text-white px-2 py-0.5 rounded-full border border-ink animate-pulse">★ 必去</span>` : ''}
+              ${item.reserved ? `<span class="text-xs font-black bg-wakatake text-ink px-2 py-0.5 rounded-full border border-ink">★ 已預約</span>` : ''}
+            </div>
+            <p class="font-bold text-sm sm:text-base text-ink/90 leading-relaxed">
+              ${item.text}
+            </p>
+          </div>
+        </div>
+      `;
+    }
+
+    switchDay(1);
+
+    /* -------------------------------------------------------------
+       3. Interactive Todo Checklist Logic with localStorage
+    ------------------------------------------------------------- */
+    const todoItems = [
+      { id: "t1", text: "護照 (確認有效期限 > 6個月)" },
+      { id: "t2", text: "來回機票確認單 / Booking 紀錄" },
+      { id: "t3", text: "機場接送預約" },
+      { id: "t4", text: "飯店 Check-in 憑證與地址" },
+      { id: "t5", text: "旅遊海外平安險 / 突發疾病險" },
+      { id: "t6", text: "網卡 eSIM 設定與開通" },
+      { id: "t7", text: "交通卡 (Suica/Pasmo/ICOCA) 儲值" },
+      { id: "t8", text: "信用卡開通海外刷卡 / 雙幣卡" },
+      { id: "t9", text: "日幣現金換匯 (名鐵購票需現金)" },
+      { id: "t10", text: "公司請假流程完成" },
+      { id: "t11", text: "餐廳預約確認 (鰻魚飯、飛驒牛燒肉)" },
+      { id: "t12", text: "Visit Japan Web 入境 QR Code 申請" },
+      { id: "t13", text: "景點門票預約 (水族館/動植物園)" },
+      { id: "t14", text: "手機下載並設定 TAXI GO App" }
+    ];
+
+    function renderTodoList() {
+      const container = document.getElementById('todo-list-container');
+      const savedState = JSON.parse(localStorage.getItem('nagoya_todo_state') || '{}');
+      
+      let completedCount = 0;
+      let html = '';
+
+      todoItems.forEach((item) => {
+        const isChecked = savedState[item.id] || false;
+        if (isChecked) completedCount++;
+
+        html += `
+          <label class="flex items-center gap-3 bg-cream hover:bg-yamabuki/20 p-3 rounded-2xl border border-ink/40 cursor-pointer transition select-none">
+            <input type="checkbox" onchange="toggleTodo('${item.id}')" ${isChecked ? 'checked' : ''} 
+                   class="w-5 h-5 rounded-md text-coral border-2 border-ink focus:ring-coral accent-coral cursor-pointer">
+            <span class="font-bold text-sm ${isChecked ? 'line-through text-ink/40' : 'text-ink'}">${item.text}</span>
+          </label>
+        `;
+      });
+
+      container.innerHTML = html;
+      document.getElementById('todo-progress').innerText = `${completedCount} / ${todoItems.length} 完成`;
+    }
+
+    function toggleTodo(id) {
+      const savedState = JSON.parse(localStorage.getItem('nagoya_todo_state') || '{}');
+      savedState[id] = !savedState[id];
+      localStorage.setItem('nagoya_todo_state', JSON.stringify(savedState));
+      renderTodoList();
+    }
+
+    renderTodoList();
+
+    /* -------------------------------------------------------------
+       4. Coupons Modal Data & Illustrative Card Rendering
+    ------------------------------------------------------------- */
+    const couponData = {
+      takashimaya: {
+        title: "高島屋 TAKASHIMAYA",
+        badge: "5% OFF 購物優惠 + ¥500券",
+        desc: "出示護照即可領取 TAKASHIMAYA SHOPPER'S CARD，滿 3,000 日圓享 5% 折扣！另附台灣旅客限定 PLAZA RESTAURANTS ¥500 優惠券。",
+        bgColor: "#F2A497",
+        code: "TAKASHIMAYA-5OFF-NAGOYA",
+        barcode: "||| ||||||| |||| ||| |||||"
+      },
+      parco: {
+        title: "松坂屋 / PARCO パルコ",
+        badge: "9.5折優惠券 + 500日圓美食券",
+        desc: "至 PARCO 西館 1 樓服務中心出示護照與傳單，即可兌換 500 日圓抵用券與大丸松坂屋 95 折購物優惠券。",
+        bgColor: "#A8D3E6",
+        code: "0932280000000002805",
+        barcode: "|||||||| ||| |||| ||||||||"
+      },
+      biccamera: {
+        title: "BicCamera ビックカメラ",
+        badge: "10% 免稅 + 7% / 5% / 3% OFF",
+        desc: "家電/3C 享 7% 折扣、藥妝化妝品 5% 折扣、日本酒 3% 折扣！全館滿額加享 10% 免稅。",
+        bgColor: "#F6D27A",
+        code: "12073800161015",
+        barcode: "|| |||||| |||| ||||| |||||"
+      },
+      edion: {
+        title: "EDION 愛電王 エディオン",
+        badge: "10% 免稅 + 7% or 5% OFF",
+        desc: "指定家電消費滿額享 7% OFF 優惠券；藥妝日用品享 5% OFF 優惠券。",
+        bgColor: "#B9DAA5",
+        code: "2800083592304",
+        barcode: "|||||| |||| ||||||| ||||"
+      },
+      donki: {
+        title: "唐吉訶德 ドン・キホーテ",
+        badge: "免稅 10% + 5% 額外折扣",
+        desc: "消費滿 10,000 日圓 (不含稅) 以上，結帳時出示電子優惠券即享 5% 額外折扣。",
+        bgColor: "#F6D27A",
+        code: "DONKI-CP-GLOBAL-2026",
+        barcode: "||| |||||| ||||||| ||||"
+      },
+      matsukiyo: {
+        title: "松本清 マツモトキヨシ",
+        badge: "免稅 10% + 最高 7% OFF",
+        desc: "滿 1萬-3萬日圓享 3% OFF；滿 3萬-5萬日圓享 5% OFF；滿 5萬日圓以上享 7% OFF！",
+        bgColor: "#F2A497",
+        code: "9839011210076",
+        barcode: "||||||||||||||||||||||||||"
+      },
+      tsuruha: {
+        title: "鶴羽藥妝 ツルハドラッグ",
+        badge: "免稅 10% + 最高 7% OFF",
+        desc: "滿 1萬-3萬日圓享 3% OFF；滿 3萬-5萬日圓享 5% OFF；滿 5萬日圓以上享 7% OFF！",
+        bgColor: "#A8D3E6",
+        code: "TSURUHA-2026-NAGOYA",
+        barcode: "||||| ||||||||| ||||| ||||"
+      },
+      sundrug: {
+        title: "尚都樂客 Sundrug サンドラッグ",
+        badge: "免稅 10% + 最高 7% OFF",
+        desc: "滿 1萬-3萬日圓享 3% OFF；滿 3萬-5萬日圓享 5% OFF；滿 5萬日圓以上享 7% OFF！",
+        bgColor: "#F6D27A",
+        code: "SUNDRUG-REFUND-7OFF",
+        barcode: "|||||||| | |||||| ||||||||"
+      },
+      daikoku: {
+        title: "大國藥妝 ダイコク",
+        badge: "免稅 10% + 最高 8% OFF",
+        desc: "滿 5,000日圓享 3% OFF；滿 30,000日圓享 5% OFF；滿 50,000日圓享 8% OFF！",
+        bgColor: "#B9DAA5",
+        code: "DAIKOKU-COUPON-8OFF",
+        barcode: "|||| ||||||||||| |||| ||||"
+      },
+      sugi: {
+        title: "SUGI 杉藥局 スギ薬局",
+        badge: "免稅 10% + 最高 8% OFF",
+        desc: "滿 1萬日圓享 4% OFF (最高14%)；滿 3萬日圓享 6% OFF (最高16%)；滿 5萬日圓享 8% OFF (最高18%)！",
+        bgColor: "#F2A497",
+        code: "2687472108907270228",
+        barcode: "||||||||||||||||||||||||||"
+      },
+      cosmos: {
+        title: "COSMOS 科摩思 コスモス",
+        badge: "免稅 10% + 最高 9% OFF",
+        desc: "滿 1萬日圓享 5% OFF；滿 3萬日圓享 7% OFF；滿 5萬日圓享 9% OFF！",
+        bgColor: "#A8D3E6",
+        code: "2303520120004",
+        barcode: "||||||||||||||||||||||||||"
+      }
+    };
+
+    function openCouponModal(key) {
+      const data = couponData[key];
+      if (!data) return;
+
+      const modalContent = document.getElementById('modal-content');
+      modalContent.innerHTML = `
+        <div class="text-center space-y-4">
+          <div class="inline-block bg-yamabuki px-3 py-1 rounded-full text-xs font-black border border-ink">
+            ${data.badge}
+          </div>
+          <h3 class="text-xl sm:text-2xl font-black text-ink">${data.title}</h3>
+
+          <!-- Simulated PDF Coupon Ticket Graphic -->
+          <div class="bg-paper chunky-border rounded-2xl p-4 relative overflow-hidden shadow-cute" style="background-color: ${data.bgColor}20;">
+            <div class="border-2 border-dashed border-ink p-3 rounded-xl bg-paper">
+              <div class="text-xs font-black text-ink/60 uppercase tracking-widest mb-1">JAPAN TRAVEL TAX FREE COUPON</div>
+              <div class="text-lg font-black text-ink mb-2">${data.title}</div>
+              
+              <!-- Barcode Graphic Box -->
+              <div class="bg-white p-3 rounded-lg border border-ink/40 my-2">
+                <div class="font-mono text-xl sm:text-2xl font-black tracking-widest text-ink select-all overflow-x-auto py-1">
+                  ${data.barcode}
+                </div>
+                <div class="font-mono text-xs font-bold text-ink/70">
+                  CODE: ${data.code}
+                </div>
+              </div>
+
+              <div class="text-[11px] font-bold text-ink/80 text-left mt-2">
+                ${data.desc}
+              </div>
+            </div>
+          </div>
+          
+          <div class="text-[11px] font-bold text-ink/50">
+            註：結帳前請向店員出示此優惠畫面以進行折扣核對。
+          </div>
+        </div>
+      `;
+
+      document.getElementById('coupon-modal').classList.remove('hidden');
+    }
+
+    function closeCouponModal() {
+      document.getElementById('coupon-modal').classList.add('hidden');
+    }
+
+    document.getElementById('coupon-modal').addEventListener('click', function(e) {
+      if (e.target === this) {
+        closeCouponModal();
+      }
+    });
+  </script>
 </body>
 </html>
+
+
