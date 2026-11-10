@@ -894,12 +894,12 @@
     title: "高島屋 タカシマヤ TAKASHIMAYA",
     badge: "5% OFF 優惠券",
     desc: "優惠券領取地點：11樓免稅櫃台。",
-    imageName: "Takashimaya"
+    imageFile: "Takashimaya.png"
   },
   matsuzakaya: {
-    title: "松坂屋 Matsuzakaya",
+    title: "松坂屋 マツザカヤ MATSUZAKAYA",
     badge: "優惠券圖片",
-    imageName: "Matsuzakaya"
+    imageFile: "Matsuzakaya.jpg"
   },
   parco: {
     title: "PARCO パルコ",
@@ -909,38 +909,38 @@
   biccamera: {
     title: "Bic Camera ビックカメラ",
     badge: "優惠券圖片",
-    imageName: "Bic Camera"
+    imageFile: "Bic Camera.jpg"
   },
   edion: {
     title: "EDION 愛電王 エディオン",
     badge: "優惠券圖片",
-    imageName: "Edion"
+    imageFile: "Edion.jpg"
   },
   matsukiyo: {
     title: "松本清 マツモトキヨシ",
     badge: "優惠券圖片",
-    imageName: "Matsukiyo"
+    imageFile: "Matsukiyo.jpg"
   },
   tsuruha: {
     title: "鶴羽藥妝 ツルハドラッグ",
     badge: "優惠券圖片",
-    imageName: "Tsuruha"
+    imageFile: "Tsuruha.png"
   },
   sundrug: {
     title: "尚都樂客 サンドラッグ Sundrug",
     badge: "優惠券圖片",
-    imageName: "Sundrug"
+    imageFile: "Sundrug.png"
   },
   sugi: {
     title: "SUGI 杉藥局 スギ薬局",
     badge: "優惠券圖片",
-    imageName: "SUGI"
+    imageFile: "SUGI.webp"
   },
   cosmos: {
-  title: "COSMOS 科摩思 コスモス",
-  badge: "優惠券圖片",
-  imageName: "cosmos"
-}
+    title: "COSMOS 科摩思 コスモス",
+    badge: "優惠券圖片",
+    imageFile: "cosmos.png"
+  }
 };
 
     const donkiCouponUrl = "https://japanportal.donki-global.com/coupon/cp001_zhtw.html";
@@ -963,21 +963,23 @@
           <h3 class="text-xl sm:text-2xl font-black text-ink">${data.title}</h3>
       `;
 
-      if (data.imageName) {
-        const extensions = ['jpg', 'jpeg', 'png', 'webp', 'gif'];
-        const encodedName = encodeURIComponent(data.imageName);
-        const candidates = extensions.map(ext => `./coupons/${encodedName}.${ext}`);
-        contentHtml += `
-          <div class="bg-paper chunky-border rounded-2xl p-3 shadow-cute">
-            <img id="coupon-image" src="${candidates[0]}" data-candidates='${JSON.stringify(candidates)}' data-index="0"
-                 alt="${data.title} 優惠券" class="w-full max-h-[70vh] object-contain mx-auto rounded-lg"
-                 onerror="tryNextCouponImage(this)">
-            <p id="coupon-image-error" class="hidden text-sm font-bold text-coral p-4">
-              找不到這張優惠券圖片，請確認 GitHub coupons 資料夾中的檔名與副檔名。
-            </p>
-          </div>
-        `;
-      }
+      if (data.imageFile) {
+  const imageUrl = `./coupons/${encodeURIComponent(data.imageFile)}`;
+
+  contentHtml += `
+    <div class="bg-paper chunky-border rounded-2xl p-3 shadow-cute">
+      <img
+        src="${imageUrl}"
+        alt="${data.title} 優惠券"
+        class="w-full max-h-[70vh] object-contain mx-auto rounded-lg"
+        onerror="this.classList.add('hidden'); document.getElementById('coupon-image-error').classList.remove('hidden');"
+      >
+      <p id="coupon-image-error" class="hidden text-sm font-bold text-coral p-4">
+        找不到這張優惠券圖片，請確認 GitHub coupons 資料夾中的檔名。
+      </p>
+    </div>
+  `;
+}
 
       if (data.desc) {
         contentHtml += `
