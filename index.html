@@ -508,6 +508,9 @@
             <span>高島屋 タカシマヤ TAKASHIMAYA</span>
             <span class="text-xs bg-coral text-white px-2 py-0.5 rounded-md">5% OFF</span>
           </button>
+          <button onclick="openCouponModal('matsuzakaya')" class="bg-paper hover:bg-yamabuki/40 chunky-border px-4 py-2.5 rounded-xl font-bold text-sm shadow-cute-sm transition flex items-center gap-2">
+  <span>松坂屋 Matsuzakaya</span>
+</button>
           <button onclick="openCouponModal('parco')" class="bg-paper hover:bg-yamabuki/40 chunky-border px-4 py-2.5 rounded-xl font-bold text-sm shadow-cute-sm transition flex items-center gap-2">
             <span>PARCO パルコ</span>
             <span class="text-xs bg-wakatake text-ink px-2 py-0.5 rounded-md">¥500 現金抵用券</span>
@@ -887,53 +890,57 @@
        4. Coupons Modal Data & Illustrative Card Rendering
     ------------------------------------------------------------- */
     const couponData = {
-      takashimaya: {
-        title: "高島屋 タカシマヤ TAKASHIMAYA",
-        badge: "5% OFF 優惠券",
-        desc: "優惠券領取地點：11樓免稅櫃台。",
-        imageName: "Takashimaya"
-      },
-      parco: {
-        title: "PARCO パルコ",
-        badge: "¥500 現金抵用券",
-        desc: "先到西館 1 樓服務中心，出示護照與優惠傳單，兌換價值 500 日圓的 PARCO 現金抵用券。"
-      },
-      biccamera: {
-        title: "Bic Camera ビックカメラ",
-        badge: "優惠券圖片",
-        imageName: "Bic Camera"
-      },
-      edion: {
-        title: "EDION 愛電王 エディオン",
-        badge: "優惠券圖片",
-        imageName: "Edion"
-      },
-      matsukiyo: {
-        title: "松本清 マツモトキヨシ",
-        badge: "優惠券圖片",
-        imageName: "Matsukiyo"
-      },
-      tsuruha: {
-        title: "鶴羽藥妝 ツルハドラッグ",
-        badge: "優惠券圖片",
-        imageName: "Tsuruha"
-      },
-      sundrug: {
-        title: "尚都樂客 サンドラッグ Sundrug",
-        badge: "優惠券圖片",
-        imageName: "Sundrug"
-      },
-      sugi: {
-        title: "SUGI 杉藥局 スギ薬局",
-        badge: "優惠券圖片",
-        imageName: "SUGI"
-      },
-      cosmos: {
-        title: "COSMOS 科摩思 コスモス",
-        badge: "優惠券圖片",
-        imageName: "Cosmos"
-      }
-    };
+  takashimaya: {
+    title: "高島屋 タカシマヤ TAKASHIMAYA",
+    badge: "5% OFF 優惠券",
+    desc: "優惠券領取地點：11樓免稅櫃台。",
+    imageName: "Takashimaya"
+  },
+  matsuzakaya: {
+    title: "松坂屋 Matsuzakaya",
+    badge: "優惠券圖片",
+    imageName: "Matsuzakaya"
+  },
+  parco: {
+    title: "PARCO パルコ",
+    badge: "¥500 現金抵用券",
+    desc: "先到西館 1 樓服務中心，出示護照與優惠傳單，兌換價值 500 日圓的 PARCO 現金抵用券。"
+  },
+  biccamera: {
+    title: "Bic Camera ビックカメラ",
+    badge: "優惠券圖片",
+    imageName: "Biccamera"
+  },
+  edion: {
+    title: "EDION 愛電王 エディオン",
+    badge: "優惠券圖片",
+    imageName: "EDION"
+  },
+  matsukiyo: {
+    title: "松本清 マツモトキヨシ",
+    badge: "優惠券圖片",
+    imageName: "MATSUKIYO"
+  },
+  tsuruha: {
+    title: "鶴羽藥妝 ツルハドラッグ",
+    badge: "優惠券圖片",
+    imageName: "TSURUHA"
+  },
+  sundrug: {
+    title: "尚都樂客 サンドラッグ Sundrug",
+    badge: "優惠券圖片",
+    imageName: "Sundrug"
+  },
+  sugi: {
+    title: "SUGI 杉藥局 スギ薬局",
+    badge: "優惠券圖片",
+    imageName: "SUGI"
+  },
+  cosmos: {
+    title: "COSMOS 科摩思 コスモス",
+    badge: "優惠券資訊"
+  }
+};
 
     const donkiCouponUrl = "https://japanportal.donki-global.com/coupon/cp001_zhtw.html";
 
