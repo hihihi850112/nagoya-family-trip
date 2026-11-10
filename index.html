@@ -993,7 +993,7 @@
     }
 
     function tryNextCouponImage(img) {
-      const candidates = extensions.map(ext => `https://raw.githubusercontent.com/hihihi850112/nagoya-family-trip/refs/heads/main/coupons/${encodedName}.${ext}`);
+     const candidates = extensions.map(ext => `./coupons/${encodedName}.${ext}`);
       const nextIndex = Number(img.dataset.index || 0) + 1;
       if (nextIndex < candidates.length) {
         img.dataset.index = String(nextIndex);
